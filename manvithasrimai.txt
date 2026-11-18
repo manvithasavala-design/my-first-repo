@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+            string s,p;
+            cin>>s>>p;
+            for(int i=0;i<s.size();i++)
+    {
+        if((s[i]>='A')&&(s[i]<='Z'))
+        {
+            s[i]=s[i]+('a'-'A');
+        }
+    }
+    for(int i=0;i<p.size();i++)
+    {
+        if((p[i]>='A')&&(p[i]<='Z'))
+        {
+            p[i]=p[i]+('a'-'A');
+        }
+    }
+    int count=0;
+    int word=0;
+    int k=0;
+    for(int i=0;i<p.size();i++)
+    {
+        if(p[i]==s[i])
+        {
+          count++;
+        }
+        else if(p[i]>s[i])
+        {
+            cout<<"-1"<<endl;
+            break;
+        }
+        else if(p[i]<s[i])
+        {
+             cout<<"1"<<endl;
+             break;
+        }
+    }
+    if(count==s.size())
+    {
+        cout<<"0"<<endl;
+    }
+
+}
